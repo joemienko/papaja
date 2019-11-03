@@ -411,7 +411,7 @@ apa_table.latex <- function(
   n_rows <- nrow(x)
 
   current_chunk <- knitr::opts_current$get("label")
-  if(!is.null(current_chunk)) caption <- paste0("\\label{tab:", current_chunk, "}", caption)
+  if(!is.null(current_chunk)) caption <- paste0("\\label{tab", current_chunk, "}", caption)
 
   # Center title row
   # If x doesn't have variable labels, yet, create them...
@@ -515,7 +515,7 @@ apa_table.markdown <- function(
 
   caption <- paste0("*", caption, "*")
   current_chunk <- knitr::opts_current$get("label")
-  if(!is.null(current_chunk)) caption <- paste0("<caption>(\\#tab:", current_chunk, ")</caption>\n\n<caption>", caption, "</caption>\n\n")
+  if(!is.null(current_chunk)) caption <- paste0("<caption>(\\#tab", current_chunk, ")</caption>\n\n<caption>", caption, "</caption>\n\n")
 
   # Print table
   # cat("<caption>")
